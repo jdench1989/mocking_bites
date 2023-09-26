@@ -9,10 +9,8 @@ class MusicLibrary:
         self.track_list.append(track)
 
     def search(self, keyword):
-        # keyword is a string
-        # Returns a list of instances of track that match the keyword
-        search_list = []
+        search_results = []
         for track in self.track_list:
             if track.matches(keyword):
-                search_list.append(track)
-        return search_list
+                search_results.append(track)
+        return search_results
