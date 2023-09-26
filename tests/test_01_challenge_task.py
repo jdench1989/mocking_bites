@@ -1,4 +1,4 @@
-from lib.task import Task
+from lib._01_challenge_task import Task
 
 
 def test_constructs():

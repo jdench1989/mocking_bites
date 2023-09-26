@@ -1,5 +1,5 @@
-from lib.task_list import TaskList
-from lib.task import Task
+from lib._01_challenge_task_list import TaskList
+from lib._01_challenge_task import Task
 
 
 def test_adds_tasks_to_list():
