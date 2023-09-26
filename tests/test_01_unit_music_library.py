@@ -20,4 +20,4 @@ def test_tracklist_add_without_integration():
     fake_track_2 = create_fake_track("Backstreet's Back", "Backstreet Boys")
     music_library.add(fake_track_1)
     music_library.add(fake_track_2)
-    assert music_library.track_list == [("Bohemian Rhapsody", "Queen"), ("Backstreet's Back", "Backstreet Boys")]
+    assert music_library.track_list == [fake_track_1, fake_track_2]

@@ -6,16 +6,19 @@ import pytest
 # Adds track to the library
 def test_adds_track_to_library():
     music_library = MusicLibrary()
-    music_library.add(Track("Bohemian Rhapsody", "Queen"))
-    assert music_library.track_list == [("Bohemian Rhapsody", "Queen")]
+    track1 = Track("Bohemian Rhapsody", "Queen")
+    music_library.add(track1)
+    assert music_library.track_list == [track1]
 
 # Given multiple tracks
 # Adds both to tracklist as a title/artist pair
 def test_adds_multiple_tracks():
     music_library = MusicLibrary()
-    music_library.add(Track("Bohemian Rhapsody", "Queen"))
-    music_library.add(Track("Careless Whisper", "Wham!"))
-    assert music_library.track_list == [("Bohemian Rhapsody", "Queen"), ("Careless Whisper", "Wham!")]
+    track1 = Track("Bohemian Rhapsody", "Queen")
+    track2 = Track("Careless Whisper", "Wham!")
+    music_library.add(track1)
+    music_library.add(track2)
+    assert music_library.track_list == [track1, track2]
 
 # Given multiple tracks in track_list
 # And given a keyword
@@ -23,8 +26,11 @@ def test_adds_multiple_tracks():
 # the keyword in either field
 def test_keyword_search():
     music_library = MusicLibrary()
-    music_library.add(Track("Bohemian Rhapsody", "Queen"))
-    music_library.add(Track("Careless Whisper", "Wham!"))
-    music_library.add(Track("We Are The Champions", "Queen"))
-    assert music_library.search("Careless") == [(("Careless Whisper", "Wham!"))]
-    assert music_library.search("Queen") == [("Bohemian Rhapsody", "Queen"), ("We Are The Champions", "Queen")]
+    track1 = Track("Bohemian Rhapsody", "Queen")
+    track2 = Track("Careless Whisper", "Wham!")
+    track3 = Track("We are the champions", "Queen")
+    music_library.add(track1)
+    music_library.add(track2)
+    music_library.add(track3)
+    assert music_library.search("Careless") == [track2]
+    assert music_library.search("Queen") == [track1, track3]

@@ -6,4 +6,4 @@ class Track:
     def matches(self, keyword):
         # keyword is a string
         # Returns true if the keyword matches either the title or artist
-        pass
+        return True if keyword in self.title or keyword in self.artist else False
