@@ -36,5 +36,5 @@ def test_keyword_search():
     music_library.add(fake_track_1)
     music_library.add(fake_track_2)
     music_library.add(fake_track_3)
-    assert music_library.search("Test") == [fake_track_1, fake_track_3]
+    assert music_library.search("TestValue") == [fake_track_1, fake_track_3]
     
