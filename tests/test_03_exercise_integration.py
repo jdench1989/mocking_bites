@@ -1,0 +1,2 @@
+from lib._03_exercise_diary import Diary
+from lib._03_exercise_secret_diary import SecretDiary
