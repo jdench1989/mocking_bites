@@ -1,5 +1,6 @@
 from lib._03_exercise_secret_diary import SecretDiary
 from unittest.mock import Mock
+import pytest
 
 def create_fake_diary(contents):
     fake_diary = Mock()
@@ -41,4 +42,7 @@ def test_lock_method_changes_lock_status_to_True():
     secret_diary.unlock()
     assert secret_diary.read() == "Some contents"
     secret_diary.lock()
-    assert secret_diary.read() == "Go away!"
+    with pytest.raises(Exception) as e:
+        secret_diary.read()
+    error_message = str(e.value)
+    assert error_message == "Go away!"

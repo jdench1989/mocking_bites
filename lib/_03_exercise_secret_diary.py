@@ -12,7 +12,7 @@ class SecretDiary:
         # Returns the diary's contents if the diary is unlocked
         # The diary starts off locked
         if self.locked == True:
-            return "Go away!"
+            raise Exception("Go away!") 
         else:
             return self.diary.read()
 
