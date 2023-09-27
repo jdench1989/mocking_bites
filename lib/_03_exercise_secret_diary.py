@@ -4,20 +4,24 @@ from lib._03_exercise_diary import Diary
 class SecretDiary:
     def __init__(self, diary):
         # diary is an instance of Diary
-        pass
+        self.diary = diary
+        self.locked = True
 
     def read(self):
         # Raises the error "Go away!" if the diary is locked
         # Returns the diary's contents if the diary is unlocked
         # The diary starts off locked
-        pass
+        if self.locked == True:
+            return "Go away!"
+        else:
+            return self.diary.read()
 
     def lock(self):
         # Locks the diary
         # Returns nothing
-        pass
+        self.locked = True
 
     def unlock(self):
         # Unlocks the diary
         # Returns nothing
-        pass
+        self.locked = False
